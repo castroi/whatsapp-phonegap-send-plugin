@@ -18,7 +18,7 @@ public class Whatsapp extends CordovaPlugin {
         try {
             if (ACTION_WHATSAPP_SEND.equals(action)) {
                    String send_to = args.getString(0);
-                   Uri mUri = Uri.parse("smsto:972527950004");
+                   /**Uri mUri = Uri.parse("smsto:972527950004");
                    Intent mIntent = new Intent(Intent.ACTION_SENDTO, mUri);
                    mIntent.setPackage("com.whatsapp");
                    mIntent.putExtra("sms_body", "The text goes here");
@@ -26,7 +26,12 @@ public class Whatsapp extends CordovaPlugin {
 
                    this.cordova.getActivity().startActivity(mIntent);
                    callbackContext.success();
-                   return true;
+                   return true;*/
+                   Intent sendIntent = new Intent("android.intent.action.MAIN");
+                   sendIntent.setComponent(new  ComponentName("com.whatsapp","com.whatsapp.Conversation"));
+                   sendIntent.putExtra("jid", send_to+"@s.whatsapp.net");
+                   startActivity(sendIntent);
+
             }
             callbackContext.error("Invalid action");
             return false;
