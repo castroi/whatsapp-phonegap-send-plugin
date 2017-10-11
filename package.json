@@ -1,0 +1,17 @@
+{
+    "version": "0.0.2",
+    "name": "castroi.whatsapp",
+    "cordova_name": "Whatsapp",
+    "description": "Whatsapp Plugin",
+    "license": "MIT",
+    "repo": "https://github.com/castroi/whatsapp-phonegap-send-plugin.git",
+    "issue": "https://github.com/castroi/whatsapp-phonegap-send-plugin/issues",
+    "keywords": [
+        "whatsapp"
+    ],
+    "platforms": [
+        "android",
+        "ios"
+    ],
+    "engines": []
+}
