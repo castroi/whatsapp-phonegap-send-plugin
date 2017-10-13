@@ -28,11 +28,11 @@ public class Whatsapp extends CordovaPlugin {
                    callbackContext.success();
                    return true;*/
                   Intent sendIntent = new Intent("android.intent.action.MAIN");
-                  sendIntent.putExtra("jid", send_to + "@s.whatsapp.net");
-                  sendIntent.putExtra(Intent.EXTRA_TEXT, "Hi");
                   sendIntent.setAction(Intent.ACTION_SEND);
-                  sendIntent.setPackage("com.whatsapp");
                   sendIntent.setType("text/plain");
+                  sendIntent.putExtra(Intent.EXTRA_TEXT, "Hi");
+                  sendIntent.putExtra("jid", send_to + "@s.whatsapp.net");
+                  sendIntent.setPackage("com.whatsapp");
                   this.cordova.getActivity().startActivity(sendIntent);
                   callbackContext.success();
                   return true;
